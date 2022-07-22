@@ -1,53 +1,59 @@
-import { useState, useEffect } from "react";
-import Timemeasure from "./components/Timemeasure";
+import { useState } from "react";
 
 function App() {
 	const [lastSeen, setLastSeen] = useState<number>(0);
-	const [presentTimestamp, setPresentTimestamp] = useState<number>(
-		Math.floor(+new Date() / 1000)
-	);
+	const [startDate, setStartDate] = useState<number>(0);
 	const [timestampDiff, setTimestampDiff] = useState("");
 
-	const inputHandler = (event: React.FormEvent<HTMLInputElement>) => {
-		let inputValue: number = event.currentTarget.valueAsNumber;
-		setLastSeen(inputValue);
+	const numberInputHandler = (event: React.FormEvent<HTMLInputElement>) => {
+		setLastSeen(event.currentTarget.valueAsNumber);
+	};
+
+	const dateInputHandler = (event: React.FormEvent<HTMLInputElement>) => {
+		let inputDate: Date = new Date(event.currentTarget.value);
+		setStartDate(Math.floor(+new Date(inputDate) / 1000));
 	};
 
 	const submitHandler = (event: React.FormEvent) => {
 		event.preventDefault();
-		console.log(lastSeen);
-		console.log(presentTimestamp);
 
-		const timestampDiff = Math.abs(lastSeen - presentTimestamp);
+		const timestampDiff = Math.abs(lastSeen - startDate);
 		console.log(timestampDiff);
 
 		if (timestampDiff < 60) {
-			console.log("0 ... 60 seconds ago");
+			setTimestampDiff("0 ... 60 seconds ago");
 		} else {
 			setTimestampDiff(timestampDiff / 60 + "minutes ago");
 		}
 	};
 
-	useEffect(() => {
-		setInterval(() => {
-			setPresentTimestamp(Math.floor(+new Date() / 1000));
-		}, 1000);
-	}, []);
-
 	return (
-		<div className="wrapper">
+		<div className="wrapper" style={{ textAlign: "center" }}>
 			<h3>Hello! Type there some UNIX data!</h3>
+			<h3>
+				<a href="https://www.unixtimestamp.com/">Grab some UNIX data!</a>
+			</h3>
 			<br></br>
 			<form onSubmit={submitHandler}>
-				<label>Date in unixtimestamp</label>
+				<label>Date in UNIXTimestamp</label>
 				<br></br>
-				<input onChange={inputHandler} name="time" type="number" />
+				<input onChange={numberInputHandler} name="time" type="number" />
+				<br></br>
+				<br></br>
+				<label>Starting date</label>
+				<br></br>
+				<input onChange={dateInputHandler} name="date" type="datetime-local" />
 				<button type="submit">Calculate</button>
 			</form>
 			<div>
-				<h3>Present timestamp: {presentTimestamp}</h3>
+				<h3>Starting timestamp: {startDate}</h3>
 				<h3>Your timestamp: {lastSeen}</h3>
 				<h3>{timestampDiff}</h3>
+			</div>
+			<div>
+				<p>
+					<a href="https://github.com/GimpFather">by: Filip Gałczyk</a>
+				</p>
 			</div>
 		</div>
 	);
