@@ -1,5 +1,6 @@
-import { useState, useEffect } from "react";
-import DifferenceComponent from "./components/DifferenceComponent";
+import { useState } from "react";
+import Difference from "./components/Difference";
+import "./App.css";
 
 function App() {
 	const [lastSeen, setLastSeen] = useState<number>(0);
@@ -9,16 +10,24 @@ function App() {
 	};
 
 	return (
-		<div className="wrapper" style={{ textAlign: "center" }}>
-			<h3>Hello! Type there some UNIX data!</h3>
-			<h3>
-				<a href="https://www.unixtimestamp.com/">Grab some UNIX data!</a>
-			</h3>
-			<div>
-				<form>
-					<div>
-						<label htmlFor="date-timestamp">Date in UNIXTimestamp</label>
+		<div className="difference-site">
+			<div className="difference-site__header">
+				<p className="difference-site__header-desc">
+					Calculate difference between two dates in:
+				</p>
+				<p className="difference-site__header-title">UNIXTIMESTAMP</p>
+			</div>
+			<div className="difference-site__hero">
+				<form className="difference-site__form">
+					<div className="difference-site__form-group">
+						<label
+							className="difference-site__form-label"
+							htmlFor="date-timestamp"
+						>
+							Pick your date
+						</label>
 						<input
+							className="difference-site__form-input"
 							id="date-timestamp"
 							onChange={numberInputHandler}
 							name="date"
@@ -27,12 +36,14 @@ function App() {
 					</div>
 				</form>
 			</div>
-			<div>
-				<h3>Your timestamp: {lastSeen}</h3>
-				<DifferenceComponent userTimestamp={lastSeen}></DifferenceComponent>
+			<div className="difference-site__answear">
+				<p className="difference-site__answear-text">
+					Your date as unix timestamp: {lastSeen}
+				</p>
+				<Difference userTimestamp={lastSeen}></Difference>
 			</div>
-			<div>
-				<p>
+			<div className="difference-site__footer">
+				<p className="difference-site__footer-text">
 					<a href="https://github.com/GimpFather">by: Filip Gałczyk</a>
 				</p>
 			</div>

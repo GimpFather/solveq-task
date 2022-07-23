@@ -1,0 +1,59 @@
+body {
+	padding: 1rem;
+	display: grid;
+	place-items: center;
+	min-height: 100vh;
+	overflow: hidden;
+	font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+		"Lucida Sans", Arial, sans-serif;
+	background-color: #eef0f7;
+}
+
+body p {
+	margin: 0;
+}
+
+.difference-site {
+	padding: 10px;
+	width: 600px;
+	height: 450px;
+	position: relative;
+	line-height: 1.5;
+	background-color: #fff;
+	box-shadow: 0 20px 30px rgba(0, 0, 0, 0.185);
+}
+
+.difference-site__header {
+	text-align: center;
+}
+
+.difference-site__header-desc {
+	padding: 15px 0px;
+	text-transform: uppercase;
+	font-size: 14px;
+}
+
+.difference-site__header-title {
+	font-size: 22px;
+	font-weight: 600;
+}
+
+.difference-site__hero {
+	padding: 30px;
+	text-align: center;
+}
+
+.difference-site__form-group {
+	display: inline-grid;
+}
+
+.difference-site__answear {
+	text-align: center;
+}
+
+.difference-site__footer {
+	position: absolute;
+	bottom: 10%;
+	right: 41%;
+	text-align: center;
+}
