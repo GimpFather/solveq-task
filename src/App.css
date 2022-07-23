@@ -6,7 +6,7 @@ body {
 	overflow: hidden;
 	font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
 		"Lucida Sans", Arial, sans-serif;
-	background-color: #eef0f7;
+	background-color: #292d3e;
 }
 
 body p {
@@ -14,12 +14,13 @@ body p {
 }
 
 .difference-site {
-	padding: 10px;
-	width: 600px;
-	height: 450px;
+	padding: 30px 100px 30px;
+	max-width: 600px;
+	max-height: 450px;
 	position: relative;
 	line-height: 1.5;
-	background-color: #fff;
+	background-color: #1c1f2b;
+	border-radius: 20px;
 	box-shadow: 0 20px 30px rgba(0, 0, 0, 0.185);
 }
 
@@ -31,11 +32,14 @@ body p {
 	padding: 15px 0px;
 	text-transform: uppercase;
 	font-size: 14px;
+	font-weight: 700;
+	color: white;
 }
 
 .difference-site__header-title {
 	font-size: 22px;
-	font-weight: 600;
+	font-weight: 800;
+	color: #faca6d;
 }
 
 .difference-site__hero {
@@ -47,13 +51,70 @@ body p {
 	display: inline-grid;
 }
 
+.difference-site__form-label {
+	padding-bottom: 5px;
+	color: white;
+	text-transform: uppercase;
+	font-size: 14px;
+	font-weight: 700;
+}
+
+input[type="datetime-local"] {
+	background-color: white;
+	padding: 5px;
+	font-size: 18px;
+	border: 2px solid black;
+	outline: none;
+	border-radius: 5px;
+}
+
+::-webkit-calendar-picker-indicator {
+	padding: 5px;
+	cursor: pointer;
+	border-radius: 5px;
+}
+
 .difference-site__answear {
+	text-transform: uppercase;
 	text-align: center;
+	font-size: 18px;
+	font-weight: 600;
+	color: white;
+}
+
+.difference-site__answear--wrong-date {
+	text-transform: uppercase;
+	text-decoration: underline;
+	text-align: center;
+	font-size: 18px;
+	font-weight: 600;
+	color: #f6546f;
+}
+
+.difference-site__answear--starting {
+	text-transform: uppercase;
+	text-align: center;
+	font-size: 18px;
+	font-weight: 600;
+	color: white;
 }
 
 .difference-site__footer {
-	position: absolute;
-	bottom: 10%;
-	right: 41%;
+	padding: 35px 0px 15px;
 	text-align: center;
+}
+
+.difference-site__footer-text a {
+	font-size: 14px;
+	font-weight: 700;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: #faca6d;
+}
+
+@media (max-width: 320px) {
+	.difference-site {
+		padding: 30px 15px;
+		max-width: 320px;
+	}
 }

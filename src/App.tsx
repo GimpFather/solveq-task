@@ -13,7 +13,7 @@ function App() {
 		<div className="difference-site">
 			<div className="difference-site__header">
 				<p className="difference-site__header-desc">
-					Calculate difference between two dates in:
+					Calculate difference between two dates in
 				</p>
 				<p className="difference-site__header-title">UNIXTIMESTAMP</p>
 			</div>
@@ -37,7 +37,7 @@ function App() {
 				</form>
 			</div>
 			<div className="difference-site__answear">
-				<CalculateDifference userTimestamp={lastSeen}></CalculateDifference>
+				<CalculateDifference userTimestamp={lastSeen} />
 			</div>
 			<div className="difference-site__footer">
 				<p className="difference-site__footer-text">
