@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Difference from "./components/Difference";
+import CalculateDifference from "./components/CalculateDifference";
 import "./App.css";
 
 function App() {
@@ -37,10 +37,7 @@ function App() {
 				</form>
 			</div>
 			<div className="difference-site__answear">
-				<p className="difference-site__answear-text">
-					Your date as unix timestamp: {lastSeen}
-				</p>
-				<Difference userTimestamp={lastSeen}></Difference>
+				<CalculateDifference userTimestamp={lastSeen}></CalculateDifference>
 			</div>
 			<div className="difference-site__footer">
 				<p className="difference-site__footer-text">
